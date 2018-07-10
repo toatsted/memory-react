@@ -70,6 +70,10 @@ class App extends Component {
 	}
 
 	componentDidMount = () => {
+		if(!localStorage.getItem("highScore")) {
+			localStorage.setItem("highScore", 0);
+		}
+		
 		this.setState({
 			highScore: parseInt(localStorage.getItem("highScore"))
 		})
